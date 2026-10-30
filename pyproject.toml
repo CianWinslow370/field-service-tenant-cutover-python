@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "field-service-tenant-cutover-python"
+version = "0.1.0"
+description = "Provision tenant subdomains and signed work-order photo uploads"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pydantic>=2.6,<3",
+  "pytest>=8,<9"
+]
+
+[tool.setuptools]
+py-modules = [
+  "fieldservice_models",
+  "infrai_client",
+  "run_cutover",
+  "service_entry",
+  "tenant_cutover_service",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
